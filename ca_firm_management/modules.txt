@@ -1,0 +1,13 @@
+{
+ "app": "ca_firm_management",
+ "color": "#1a3c5e",
+ "creation": "2024-01-01 00:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Module Def",
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module_name": "CA Firm Management",
+ "name": "CA Firm Management",
+ "owner": "Administrator",
+ "restrict_to_domain": ""
+}

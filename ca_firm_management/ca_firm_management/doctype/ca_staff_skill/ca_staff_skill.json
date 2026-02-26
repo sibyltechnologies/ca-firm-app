@@ -1,0 +1,33 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "istable": 1,
+ "fields": [
+  {
+   "fieldname": "skill",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Skill",
+   "options": "Statutory Audit\nInternal Audit\nTax (Corporate)\nTax (Individual)\nTransfer Pricing\nFBR Representation\nBookkeeping\nPayroll\nIFRS\nSECP Compliance\nExcel/Data Analysis\nOther"
+  },
+  {
+   "fieldname": "proficiency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Proficiency",
+   "options": "Beginner\nIntermediate\nAdvanced\nExpert"
+  },
+  {
+   "fieldname": "years_experience",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Years"
+  }
+ ],
+ "module": "CA Firm Management",
+ "name": "CA Staff Skill",
+ "owner": "Administrator",
+ "permissions": []
+}

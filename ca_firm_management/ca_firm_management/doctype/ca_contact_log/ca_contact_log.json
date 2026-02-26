@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "client",
+  "log_date",
+  "column_break_1",
+  "log_type",
+  "logged_by",
+  "notes",
+  "follow_up_required",
+  "follow_up_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LOG-.YYYY.-.####"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "CA Client",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "log_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "log_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Call\nMeeting\nEmail\nRisk Change\nDocument Received\nOther"
+  },
+  {
+   "fieldname": "logged_by",
+   "fieldtype": "Link",
+   "label": "Logged By",
+   "options": "User"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "follow_up_required",
+   "fieldtype": "Check",
+   "label": "Follow-up Required"
+  },
+  {
+   "depends_on": "follow_up_required",
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Follow-up Date"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CA Firm Management",
+ "name": "CA Contact Log",
+ "owner": "Administrator",
+ "permissions": [
+  {"create": 1, "read": 1, "write": 1, "delete": 1, "role": "CA Partner"},
+  {"create": 1, "read": 1, "write": 1, "role": "CA Manager"},
+  {"create": 1, "read": 1, "write": 1, "role": "CA Senior"},
+  {"read": 1, "role": "CA Trainee"},
+  {"create": 1, "read": 1, "write": 1, "delete": 1, "role": "CA Admin"}
+ ],
+ "sort_field": "log_date",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

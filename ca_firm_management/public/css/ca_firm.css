@@ -1,0 +1,33 @@
+/* CA Firm Management — Custom Styles */
+
+/* Risk badge colors in list views */
+.indicator.red   { background: #dc3545; }
+.indicator.orange { background: #fd7e14; }
+.indicator.yellow { background: #ffc107; }
+.indicator.green  { background: #28a745; }
+.indicator.blue   { background: #1a3c5e; }
+
+/* Engagement card progress bar */
+.engagement-progress {
+    height: 6px;
+    border-radius: 3px;
+    background: #e9ecef;
+    margin-top: 4px;
+}
+.engagement-progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    background: #1a3c5e;
+    transition: width 0.3s ease;
+}
+
+/* Overdue row highlight in list */
+.list-row[data-payment-status="Overdue"] {
+    border-left: 3px solid #dc3545;
+}
+
+/* Header accent */
+.page-head .title-area {
+    border-left: 4px solid #1a3c5e;
+    padding-left: 10px;
+}

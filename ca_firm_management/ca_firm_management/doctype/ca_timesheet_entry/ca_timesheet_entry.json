@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_basic",
+  "staff_member",
+  "staff_name",
+  "column_break_1",
+  "work_date",
+  "engagement",
+  "section_work",
+  "activity_type",
+  "hours_logged",
+  "column_break_2",
+  "is_billable",
+  "billable_amount",
+  "section_description",
+  "work_description",
+  "section_approval",
+  "approved_by",
+  "approval_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TIME-.YYYY.-.####"
+  },
+  {
+   "fieldname": "section_basic",
+   "fieldtype": "Section Break",
+   "label": "Timesheet Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "staff_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Staff Member",
+   "options": "CA Staff Profile",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "staff_member.full_name",
+   "fieldname": "staff_name",
+   "fieldtype": "Data",
+   "label": "Staff Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "work_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Work Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "engagement",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Engagement",
+   "options": "CA Engagement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_work",
+   "fieldtype": "Section Break",
+   "label": "Work Details"
+  },
+  {
+   "fieldname": "activity_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Activity Type",
+   "options": "\nPlanning\nRisk Assessment\nFieldwork\nSubstantive Testing\nAnalytical Procedures\nClient Meetings\nDocument Review\nReport Writing\nReview\nAdmin\nTravel\nOther"
+  },
+  {
+   "fieldname": "hours_logged",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Hours Logged",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 1,
+   "fieldname": "is_billable",
+   "fieldtype": "Check",
+   "label": "Billable"
+  },
+  {
+   "fieldname": "billable_amount",
+   "fieldtype": "Currency",
+   "label": "Billable Amount (PKR)",
+   "read_only": 1,
+   "description": "Auto-calculated: hours × staff hourly rate"
+  },
+  {
+   "fieldname": "section_description",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "work_description",
+   "fieldtype": "Text",
+   "label": "Work Done",
+   "reqd": 1,
+   "description": "Brief description of work performed"
+  },
+  {
+   "fieldname": "section_approval",
+   "fieldtype": "Section Break",
+   "label": "Approval"
+  },
+  {
+   "fieldname": "approved_by",
+   "fieldtype": "Link",
+   "label": "Approved By",
+   "options": "CA Staff Profile"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "approval_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Approval Status",
+   "options": "Pending\nApproved\nRejected"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CA Firm Management",
+ "name": "CA Timesheet Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Partner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "read": 1,
+   "role": "CA Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "CA Senior",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "CA Trainee",
+   "write": 1
+  }
+ ],
+ "search_fields": "staff_name,engagement",
+ "sort_field": "work_date",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,194 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_personal",
+  "full_name",
+  "designation",
+  "column_break_1",
+  "email",
+  "phone",
+  "section_firm",
+  "role_in_firm",
+  "date_joined",
+  "column_break_2",
+  "icap_membership_no",
+  "icap_membership_type",
+  "section_skills",
+  "skills_table",
+  "section_billing",
+  "hourly_rate",
+  "monthly_target_hours",
+  "column_break_3",
+  "is_active",
+  "user_account"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "STAFF-.####"
+  },
+  {
+   "fieldname": "section_personal",
+   "fieldtype": "Section Break",
+   "label": "Staff Information"
+  },
+  {
+   "bold": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Designation",
+   "options": "\nPartner\nSenior Manager\nManager\nSenior Associate\nAssociate\nArticle Trainee\nAdmin Staff"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "section_firm",
+   "fieldtype": "Section Break",
+   "label": "Firm Details"
+  },
+  {
+   "fieldname": "role_in_firm",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Role",
+   "options": "CA Partner\nCA Manager\nCA Senior\nCA Trainee\nCA Admin"
+  },
+  {
+   "fieldname": "date_joined",
+   "fieldtype": "Date",
+   "label": "Date Joined"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "icap_membership_no",
+   "fieldtype": "Data",
+   "label": "ICAP Membership No.",
+   "description": "Required for signing audit reports"
+  },
+  {
+   "fieldname": "icap_membership_type",
+   "fieldtype": "Select",
+   "label": "ICAP Membership Type",
+   "options": "\nFCA\nACA\nAICPA\nACCA\nCMA\nStudent/Trainee"
+  },
+  {
+   "fieldname": "section_skills",
+   "fieldtype": "Section Break",
+   "label": "Skills & Expertise"
+  },
+  {
+   "fieldname": "skills_table",
+   "fieldtype": "Table",
+   "label": "Skills",
+   "options": "CA Staff Skill"
+  },
+  {
+   "fieldname": "section_billing",
+   "fieldtype": "Section Break",
+   "label": "Billing & Targets"
+  },
+  {
+   "fieldname": "hourly_rate",
+   "fieldtype": "Currency",
+   "label": "Hourly Rate (PKR)"
+  },
+  {
+   "default": "160",
+   "fieldname": "monthly_target_hours",
+   "fieldtype": "Int",
+   "label": "Monthly Target Hours"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": 1,
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "user_account",
+   "fieldtype": "Link",
+   "label": "ERPNext User Account",
+   "options": "User",
+   "description": "Link to ERPNext user for system access"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CA Firm Management",
+ "name": "CA Staff Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Partner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "CA Manager"
+  },
+  {
+   "read": 1,
+   "role": "CA Senior"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "write": 1,
+   "role": "CA Admin"
+  }
+ ],
+ "search_fields": "full_name,designation,icap_membership_no",
+ "sort_field": "full_name",
+ "sort_order": "ASC",
+ "title_field": "full_name",
+ "track_changes": 1
+}

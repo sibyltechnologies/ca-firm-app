@@ -1,0 +1,362 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "is_submittable": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "section_basic",
+  "client",
+  "client_name",
+  "column_break_1",
+  "engagement_type",
+  "status",
+  "section_scope",
+  "period_from",
+  "period_to",
+  "column_break_2",
+  "deadline",
+  "financial_year",
+  "section_team",
+  "engagement_partner",
+  "engagement_manager",
+  "column_break_3",
+  "senior_in_charge",
+  "team_members_table",
+  "section_fee",
+  "fee_type",
+  "fee_amount",
+  "column_break_4",
+  "currency",
+  "tax_applicable",
+  "section_documents",
+  "engagement_letter_received",
+  "engagement_letter_date",
+  "column_break_5",
+  "engagement_letter_attachment",
+  "terms_agreed",
+  "section_progress",
+  "progress_percent",
+  "priority",
+  "column_break_6",
+  "billing_status",
+  "remarks",
+  "section_closure",
+  "completion_date",
+  "closed_by",
+  "column_break_7",
+  "closure_notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "ENG-.YYYY.-.####"
+  },
+  {
+   "fieldname": "section_basic",
+   "fieldtype": "Section Break",
+   "label": "Engagement Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "options": "CA Client",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "client.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "engagement_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Engagement Type",
+   "options": "\nStatutory Audit\nInternal Audit\nTax Return (Corporate)\nTax Return (Individual)\nTax Advisory\nDue Diligence\nBookkeeping\nPayroll Services\nCompany Incorporation\nSECP Compliance\nFBR Representation\nOther Advisory",
+   "reqd": 1
+  },
+  {
+   "default": "Planning",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Planning\nIn Progress\nUnder Review\nPending Client\nCompleted\nBilled\nCancelled"
+  },
+  {
+   "fieldname": "section_scope",
+   "fieldtype": "Section Break",
+   "label": "Period & Scope"
+  },
+  {
+   "fieldname": "period_from",
+   "fieldtype": "Date",
+   "label": "Period From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_to",
+   "fieldtype": "Date",
+   "label": "Period To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "deadline",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Deadline"
+  },
+  {
+   "fieldname": "financial_year",
+   "fieldtype": "Data",
+   "label": "Financial Year",
+   "description": "e.g. 2024-25"
+  },
+  {
+   "fieldname": "section_team",
+   "fieldtype": "Section Break",
+   "label": "Team Assignment"
+  },
+  {
+   "fieldname": "engagement_partner",
+   "fieldtype": "Link",
+   "label": "Engagement Partner",
+   "options": "CA Staff Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "engagement_manager",
+   "fieldtype": "Link",
+   "label": "Engagement Manager",
+   "options": "CA Staff Profile"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "senior_in_charge",
+   "fieldtype": "Link",
+   "label": "Senior In Charge",
+   "options": "CA Staff Profile"
+  },
+  {
+   "fieldname": "team_members_table",
+   "fieldtype": "Table",
+   "label": "Team Members",
+   "options": "CA Engagement Team Member"
+  },
+  {
+   "fieldname": "section_fee",
+   "fieldtype": "Section Break",
+   "label": "Fee Structure"
+  },
+  {
+   "fieldname": "fee_type",
+   "fieldtype": "Select",
+   "label": "Fee Type",
+   "options": "Fixed Fee\nHourly Rate\nMilestone Based\nRetainer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fee_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fee Amount (PKR)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "PKR",
+   "fieldname": "currency",
+   "fieldtype": "Select",
+   "label": "Currency",
+   "options": "PKR\nUSD\nGBP\nAED"
+  },
+  {
+   "default": 1,
+   "fieldname": "tax_applicable",
+   "fieldtype": "Check",
+   "label": "Sales Tax Applicable (16%)"
+  },
+  {
+   "fieldname": "section_documents",
+   "fieldtype": "Section Break",
+   "label": "Engagement Letter"
+  },
+  {
+   "default": 0,
+   "fieldname": "engagement_letter_received",
+   "fieldtype": "Check",
+   "label": "Engagement Letter Received"
+  },
+  {
+   "depends_on": "engagement_letter_received",
+   "fieldname": "engagement_letter_date",
+   "fieldtype": "Date",
+   "label": "Letter Date"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "engagement_letter_received",
+   "fieldname": "engagement_letter_attachment",
+   "fieldtype": "Attach",
+   "label": "Upload Engagement Letter"
+  },
+  {
+   "default": 0,
+   "fieldname": "terms_agreed",
+   "fieldtype": "Check",
+   "label": "Terms & Conditions Agreed"
+  },
+  {
+   "fieldname": "section_progress",
+   "fieldtype": "Section Break",
+   "label": "Progress"
+  },
+  {
+   "default": "0",
+   "fieldname": "progress_percent",
+   "fieldtype": "Percent",
+   "label": "Progress %"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Unbilled",
+   "fieldname": "billing_status",
+   "fieldtype": "Select",
+   "label": "Billing Status",
+   "options": "Unbilled\nPartially Billed\nFully Billed"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "depends_on": "eval:in_list(['Completed', 'Cancelled'], doc.status)",
+   "fieldname": "section_closure",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Completion Date"
+  },
+  {
+   "fieldname": "closed_by",
+   "fieldtype": "Link",
+   "label": "Closed By",
+   "options": "CA Staff Profile"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "closure_notes",
+   "fieldtype": "Small Text",
+   "label": "Closure Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CA Engagement",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CA Firm Management",
+ "name": "CA Engagement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Partner",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Senior",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "CA Trainee"
+  }
+ ],
+ "search_fields": "client_name,engagement_type,status",
+ "sort_field": "deadline",
+ "sort_order": "ASC",
+ "title_field": "client_name",
+ "track_changes": 1,
+ "track_views": 1
+}

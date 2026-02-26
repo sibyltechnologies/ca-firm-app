@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:client_code",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_basic",
+  "client_code",
+  "client_name",
+  "column_break_1",
+  "status",
+  "risk_rating",
+  "section_classification",
+  "entity_type",
+  "industry",
+  "column_break_2",
+  "ntn",
+  "registration_number",
+  "section_contacts",
+  "primary_contact_name",
+  "primary_contact_email",
+  "column_break_3",
+  "primary_contact_phone",
+  "address",
+  "section_financial",
+  "client_since",
+  "annual_fee_budget",
+  "column_break_4",
+  "assigned_partner",
+  "assigned_manager",
+  "section_notes",
+  "notes",
+  "section_lead",
+  "lead_source",
+  "referred_by",
+  "column_break_5",
+  "converted_from_lead",
+  "lead_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_basic",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "bold": 1,
+   "fieldname": "client_code",
+   "fieldtype": "Data",
+   "label": "Client Code",
+   "reqd": 1,
+   "unique": 1,
+   "description": "e.g. CLT-2024-001"
+  },
+  {
+   "bold": 1,
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Client Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Prospect\nActive\nInactive\nBlacklisted"
+  },
+  {
+   "default": "Low",
+   "fieldname": "risk_rating",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Risk Rating",
+   "options": "Low\nMedium\nHigh\nVery High",
+   "description": "Updated in Phase 2 via Risk Engine"
+  },
+  {
+   "fieldname": "section_classification",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "entity_type",
+   "fieldtype": "Select",
+   "label": "Entity Type",
+   "options": "\nPrivate Limited Company\nPublic Limited Company\nSole Proprietorship\nPartnership\nTrust / NGO\nGovernment Entity\nForeign Branch\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "label": "Industry",
+   "options": "Industry Type"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ntn",
+   "fieldtype": "Data",
+   "label": "NTN",
+   "description": "National Tax Number (Pakistan)"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "SECP Registration No."
+  },
+  {
+   "fieldname": "section_contacts",
+   "fieldtype": "Section Break",
+   "label": "Primary Contact"
+  },
+  {
+   "fieldname": "primary_contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Name"
+  },
+  {
+   "fieldname": "primary_contact_email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_contact_phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "section_financial",
+   "fieldtype": "Section Break",
+   "label": "Assignment & Financial"
+  },
+  {
+   "fieldname": "client_since",
+   "fieldtype": "Date",
+   "label": "Client Since"
+  },
+  {
+   "fieldname": "annual_fee_budget",
+   "fieldtype": "Currency",
+   "label": "Annual Fee Budget (PKR)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "assigned_partner",
+   "fieldtype": "Link",
+   "label": "Assigned Partner",
+   "options": "CA Staff Profile"
+  },
+  {
+   "fieldname": "assigned_manager",
+   "fieldtype": "Link",
+   "label": "Assigned Manager",
+   "options": "CA Staff Profile"
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "section_lead",
+   "fieldtype": "Section Break",
+   "label": "Lead Information",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "lead_source",
+   "fieldtype": "Select",
+   "label": "Lead Source",
+   "options": "\nReferral\nCold Call\nWebsite\nSocial Media\nExisting Client\nICAPAEB Directory\nOther"
+  },
+  {
+   "fieldname": "referred_by",
+   "fieldtype": "Data",
+   "label": "Referred By"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "converted_from_lead",
+   "fieldtype": "Check",
+   "label": "Converted from Lead"
+  },
+  {
+   "fieldname": "lead_date",
+   "fieldtype": "Date",
+   "label": "Lead Date"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CA Firm Management",
+ "name": "CA Client",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Partner",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Senior",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "CA Trainee"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CA Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "client_name,ntn,entity_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "client_name",
+ "track_changes": 1,
+ "track_views": 1
+}
