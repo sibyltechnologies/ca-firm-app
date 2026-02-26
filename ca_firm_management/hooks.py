@@ -1,8 +1,8 @@
 app_name = "ca_firm_management"
 app_title = "CA Firm Management"
-app_publisher = "Your Firm"
-app_description = "CA Firm Practice Management System - Phase 1"
-app_email = "admin@yourfirm.com"
+app_publisher = "Sibyl Technologies"
+app_description = "CA Firm Practice Management System"
+app_email = "support@sibyl.pk"
 app_license = "GPL-3.0"
 app_version = "1.0.0"
 
@@ -29,9 +29,8 @@ fixtures = [
 ]
 
 # ─── App-wide CSS / JS ────────────────────────────────────────────────────────
-app_include_css = ["/assets/ca_firm_management/css/ca_firm.css"]
-app_include_js  = ["/assets/ca_firm_management/js/ca_firm.js"]
-
+app_include_css = ["ca_firm_management.bundle.css"]
+app_include_js  = ["ca_firm_management.bundle.js"]
 # ─── Doc Events ───────────────────────────────────────────────────────────────
 doc_events = {
     "CA Engagement": {

@@ -1,0 +1,7 @@
+{
+  "name": "ca_firm_management",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'No custom build step required'"
+  }
+}
